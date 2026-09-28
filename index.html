@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- SEO Básico -->
+    <title>Santidade Brasil – Fé e Inspiração no Brasil</title>
+    <meta name="description" content="Conheça a história dos santos, beatos, servos de Deus e veneráveis do Brasil. Uma jornada de fé e inspiração.">
+    <meta name="keywords" content="Santidade, Santos do Brasil, Igreja Católica, Beatos, Servos de Deus, Veneráveis, Fé">
+    <meta name="author" content="Santidade Brasil">
+
+    <!-- Open Graph / Meta Tags para Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Santidade Brasil – Fé e Inspiração no Brasil">
+    <meta property="og:description" content="Conheça a história dos santos, beatos, servos de Deus e veneráveis do Brasil.">
+    <meta property="og:image" content="./Imagens/brasao.png">
+    <meta name="twitter:card" content="summary">
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Santidade Brasil",
+          "description": "Conheça a história dos santos, beatos, servos de Deus e veneráveis do Brasil.",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "#organization" }
+        },
+        {
+          "@type": "Organization",
+          "@id": "#organization",
+          "name": "Santidade Brasil",
+          "description": "Portal de fé, história e devoção católica no Brasil."
+        }
+      ]
+    }
+    </script>
+
+    <!-- Estilos e Fontes -->
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="assets/tailwind.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="Imagens/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="theme-color" content="#002776">
+
+    <!-- Preconnect para otimização de recursos externos -->
+</head>
+
+<body class="antialiased text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Link de Acessibilidade -->
+    <a href="#app-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-indigo-600 text-white px-4 py-2 rounded-md z-[100]">
+        Pular para o conteúdo principal
+    </a>
+
+    <!-- ========================================== -->
+    <!-- CABEÇALHO / HEADER                         -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 bg-white shadow-md" role="banner">
+
+        <!-- 1. Banner Dinâmico: Evangelho do Dia -->
+        <a id="evangelho-do-dia-banner" 
+           href="#evangelho" 
+           class="flag-green-bar flex flex-wrap items-center justify-center gap-x-2 gap-y-1 px-3 py-2 text-center text-xs sm:text-sm font-semibold text-white transition-colors duration-200 shadow-inner">
+           <span id="evangelho-do-dia-texto" class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+               <span aria-hidden="true">📖</span>
+               <span>Carregando o Evangelho do Dia...</span>
+           </span>
+        </a>
+
+        <!-- 2. Banner Promocional -->
+        <a href="https://www.youtube.com/watch?v=IX80m13N3HU" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="brand-blue-bar block py-2 text-center text-xs sm:text-sm font-bold uppercase tracking-wide text-white transition-colors duration-200">
+            Santidade Brasil · Histórias de fé e devoção que edificam a nossa pátria
+        </a>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo / Marca -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex items-center gap-3 sm:gap-5 group focus:outline-none" aria-label="Página Inicial Santidade Brasil">
+                        <img src="./Imagens/icon-192.png" alt="Brasão Santidade Brasil" class="h-12 sm:h-16 w-auto transition-transform duration-300 group-hover:scale-105">
+                        <span class="flex flex-col items-start text-lg sm:text-2xl font-black tracking-tight text-indigo-700">
+                            <span class="whitespace-nowrap"><span class="brand-santidade">Santidade</span> <span class="brand-brasil">Brasil</span></span>
+                            <span class="brand-tagline"><span class="brand-tagline-green">Fé</span><span class="brand-tagline-separator" aria-hidden="true"> · </span><span class="brand-tagline-yellow">História</span><span class="brand-tagline-separator" aria-hidden="true"> · </span><span class="brand-tagline-blue">Devoção</span></span>
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Navegação Principal (Desktop) -->
+                <nav class="hidden lg:flex items-center space-x-3 xl:space-x-5" aria-label="Navegação principal">
+                    <a href="#home" class="nav-link text-base xl:text-lg font-bold text-gray-700 hover:text-indigo-600 transition-colors duration-200">Início</a>
+                    <a href="#santos" class="nav-link text-base xl:text-lg font-bold text-gray-700 hover:text-indigo-600 transition-colors duration-200">Santos</a>
+                    <a href="#beatos" class="nav-link text-base xl:text-lg font-bold text-gray-700 hover:text-indigo-600 transition-colors duration-200">Beatos</a>
+                    <a href="#servos" class="nav-link text-base xl:text-lg font-bold text-gray-700 hover:text-indigo-600 transition-colors duration-200 whitespace-nowrap">Servos de Deus</a>
+                    <a href="#veneraveis" class="nav-link text-base xl:text-lg font-bold text-gray-700 hover:text-indigo-600 transition-colors duration-200">Veneráveis</a>
+                    
+                    <!-- Campo de Busca Desktop -->
+                    <div class="relative ml-2 xl:ml-4" role="search">
+                        <label for="search-input" class="sr-only">Buscar no site</label>
+                        <input type="search" id="search-input" placeholder="Buscar..." 
+                               class="bg-gray-100 text-base border-none rounded-full py-2 pl-10 pr-4 w-36 xl:w-40 focus:w-52 xl:focus:w-60 focus:ring-2 focus:ring-indigo-500 transition-all duration-300 outline-none">
+                        <div class="absolute left-3 top-2.5 text-gray-400 pointer-events-none" aria-hidden="true">
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Botão de Menu Hambúrguer (Mobile) -->
+                <div class="lg:hidden">
+                    <button type="button" id="mobile-menu-button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir Menu de Navegação" class="p-3 rounded-lg text-blue-900 hover:bg-blue-50 hover:text-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 transition-colors">
+                        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Responsivo Mobile -->
+        <nav class="hidden bg-white border-t border-gray-100 shadow-xl" id="mobile-menu" aria-label="Navegação Mobile">
+            <div class="px-4 pt-4 pb-6 space-y-2 text-center">
+                
+                <!-- Busca Mobile -->
+                <div class="mb-4 px-2" role="search">
+                    <label for="search-input-mobile" class="sr-only">Buscar no site</label>
+                    <div class="relative">
+                        <input type="search" id="search-input-mobile" placeholder="Buscar..." 
+                               class="w-full bg-gray-100 text-base border-none rounded-full py-2 pl-10 pr-4 focus:ring-2 focus:ring-indigo-500 outline-none">
+                        <div class="absolute left-3 top-2.5 text-gray-400 pointer-events-none" aria-hidden="true">
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#home" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors nav-link-mobile">Início</a>
+                <a href="#santos" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors nav-link-mobile">Santos</a>
+                <a href="#beatos" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors nav-link-mobile">Beatos</a>
+                <a href="#servos" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors nav-link-mobile">Servos de Deus</a>
+                <a href="#veneraveis" class="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 transition-colors nav-link-mobile">Veneráveis</a>
+                <a href="termos.html" class="block px-4 py-3 rounded-lg text-base font-medium text-indigo-600 hover:bg-indigo-50 transition-colors">Privacidade</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- CONTEÚDO DINÂMICO DA APLICAÇÃO (SPA)       -->
+    <!-- ========================================== -->
+    <main id="app-content" class="flex-grow focus:outline-none" tabindex="-1">
+        
+        <!-- SEÇÃO HERO INICIAL -->
+        <section class="relative bg-slate-900 text-white py-20 px-4 text-center overflow-hidden">
+            <div class="container mx-auto max-w-4xl relative z-10">
+                <h1 class="text-3xl sm:text-5xl font-black mb-4 tracking-tight leading-tight">
+                    A Santidade Inspira o Brasil
+                </h1>
+                <p class="text-base sm:text-lg text-gray-300 mb-8 max-w-2xl mx-auto font-light">
+                    Explore as vidas inspiradoras de Santos, Beatos, Veneráveis e Servos de Deus.
+                </p>
+
+                <!-- ÚNICO BOTÃO DE DESTAQUE DO DIA -->
+                <a id="btn-santo-destaque" 
+                   href="#home" 
+                   class="inline-block px-8 py-3.5 bg-amber-500 hover:bg-amber-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 uppercase text-xs sm:text-sm tracking-wider">
+                   DESCUBRA O DESTAQUE DO DIA
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================== -->
+    <!-- RODAPÉ / FOOTER                            -->
+    <!-- ========================================== -->
+    <footer class="brand-blue-footer text-slate-300 py-12 md:py-14" role="contentinfo">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 pb-10">
+                <div class="max-w-xl">
+                    <a href="#home" class="inline-flex items-center gap-3 mb-5 rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400" aria-label="Santidade Brasil, página inicial">
+                        <span class="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-amber-600 text-amber-50" aria-hidden="true">
+                            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m12 3 1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3Zm7 12 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15ZM5 2l.7 1.8L7.5 4.5l-1.8.7L5 7l-.7-1.8-1.8-.7 1.8-.7L5 2Z"/></svg>
+                        </span>
+                        <span class="font-serif text-2xl font-bold text-white">Santidade <span class="text-amber-500">Brasil</span></span>
+                    </a>
+                    <p class="max-w-lg leading-7 text-slate-400">Portal dedicado à preservação, estudo e divulgação das virtudes heroicas, biografias, milagres e devoções dos Santos, Beatos, Veneráveis e Servos de Deus da Igreja Católica no Brasil.</p>
+                    <p class="mt-5 inline-flex items-center gap-2 text-sm text-amber-400">
+                        <svg class="h-5 w-5 text-rose-400" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.4-9.1C.4 6.7 6.7 2.4 12 7.2c5.3-4.8 11.6-.5 9.4 4.7C19.5 16.4 12 21 12 21Z"/></svg>
+                        Evangelização digital para propagar o amor de Cristo.
+                    </p>
+                </div>
+
+                <nav aria-label="Causas de santidade">
+                    <h2 class="mb-5 text-sm font-extrabold uppercase tracking-wide text-amber-400">Causas de santidade</h2>
+                    <ul class="space-y-3">
+                        <li><a class="footer-link" href="#santos">Santos canonizados</a></li>
+                        <li><a class="footer-link" href="#beatos">Beatos e bem-aventurados</a></li>
+                        <li><a class="footer-link" href="#veneraveis">Veneráveis do Brasil</a></li>
+                        <li><a class="footer-link" href="#servos">Servos de Deus</a></li>
+                    </ul>
+                </nav>
+
+                <nav aria-label="Informações institucionais">
+                    <h2 class="mb-5 text-sm font-extrabold uppercase tracking-wide text-amber-400">Institucional</h2>
+                    <ul class="space-y-3">
+                        <li><a class="footer-link" href="sobre.html">Sobre o Santidade Brasil</a></li>
+                        <li><a class="footer-link" href="parceiros.html">Instituições parceiras (ABRHAGI)</a></li>
+                        <li><a class="footer-link" href="termos.html">Termos de Uso e Aviso de Privacidade</a></li>
+                        <li><a class="footer-link footer-link-contact" href="contatos.html">Contato e parcerias <span aria-hidden="true">↗</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="flex flex-col gap-4 border-t border-slate-800 pt-6 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                <p>&copy; 2026 <strong class="font-semibold text-slate-400">Santidade Brasil</strong>. Todos os direitos reservados.</p>
+                <div class="flex flex-wrap items-center gap-x-5 gap-y-2">
+                    <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3 19 6v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg>Privacidade e respeito aos seus dados</span>
+                    <span>Feito com fé e reverência.</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- BANNER DE COOKIES (LGPD / GDPR)            -->
+    <!-- ========================================== -->
+    <div id="cookie-banner" class="hidden fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 shadow-[0_-5px_20px_rgba(0,0,0,0.1)] z-[100] py-5" role="region" aria-live="polite" aria-label="Aviso de privacidade">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-left flex-1">
+                <h2 class="text-gray-800 font-bold text-base mb-1">Aviso de privacidade</h2>
+                <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">
+                    Este site usa armazenamento local para lembrar que o aviso foi fechado e consulta um serviço externo para exibir a liturgia do dia. Os estilos também são carregados de um CDN.
+                    <a href="termos.html" class="text-indigo-600 underline font-medium hover:text-indigo-800">Leia os termos</a>
+                </p>
+            </div>
+            <div class="flex items-center gap-4 shrink-0">
+                <button id="accept-cookies" type="button" class="px-6 py-2 bg-indigo-600 text-white font-bold rounded hover:bg-indigo-700 transition duration-200 uppercase text-xs shadow-sm focus:ring-2 focus:ring-indigo-500">
+                    Entendi
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- MODAL: EVANGELHO DO DIA                    -->
+    <!-- ========================================== -->
+    <div id="evangelho-modal" class="hidden fixed inset-0 bg-black/60 z-[110] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="evangelho-modal-titulo">
+        <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-6 relative">
+            <button id="evangelho-modal-fechar" type="button" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700" aria-label="Fechar">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <p class="text-xs uppercase tracking-wide text-emerald-600 font-bold mb-1">Evangelho do Dia</p>
+            <h2 id="evangelho-modal-titulo" class="text-xl font-bold text-indigo-700 mb-4 pr-8"></h2>
+            <p id="evangelho-modal-texto" class="text-gray-700 leading-relaxed whitespace-pre-line"></p>
+        </div>
+    </div>
+
+    <!-- SCRIPTS MÓDULOS -->
+    <script src="data.js" defer></script>
+    <script src="router.js" defer></script>
+    <script src="app.js" defer></script>
+
+    <!-- ========================================== -->
+    <!-- LÓGICA DE INTERAÇÃO E REQUISIÇÕES         -->
+    <!-- ========================================== -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+        // ----------------------------------------------------
+        // 1. CARREGAMENTO SEGURO DO EVANGELHO DO DIA (API)
+        // ----------------------------------------------------
+        async function carregarEvangelhoDoDia() {
+          const bannerTexto = document.getElementById('evangelho-do-dia-texto');
+          if (!bannerTexto) return;
+
+          try {
+            const hoje = new Date();
+            const dia = String(hoje.getDate()).padStart(2, '0');
+            const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+
+            let response = await fetch(`https://liturgia.up.railway.app/${dia}-${mes}`);
+            
+            if (!response.ok) {
+              response = await fetch(`https://liturgia.up.railway.app/?dia=${dia}&mes=${mes}`);
+            }
+
+            if (!response.ok) throw new Error('Servidor da liturgia indisponível');
+
+            const data = await response.json();
+
+            const evangelho = data.evangelho || data.leituras?.evangelho || null;
+            const titulo = evangelho?.referencia || evangelho?.titulo || evangelho?.evangelhoTitulo || 'Evangelho do Dia';
+            const texto = evangelho?.texto || evangelho?.evangelhoTexto || evangelho?.mensagem || null;
+
+            if (texto) {
+              bannerTexto.textContent = '';
+              
+              const icone = document.createElement('span');
+              icone.textContent = '📖 ';
+
+              const tituloEl = document.createElement('strong');
+              tituloEl.textContent = titulo;
+
+              const identificacao = document.createElement('span');
+              identificacao.textContent = '· Evangelho do Dia';
+              identificacao.className = 'text-emerald-100';
+
+              const sufixo = document.createElement('span');
+              sufixo.textContent = 'Toque para ler';
+              sufixo.className = 'text-xs underline underline-offset-2';
+
+              bannerTexto.appendChild(icone);
+              bannerTexto.appendChild(tituloEl);
+              bannerTexto.appendChild(identificacao);
+              bannerTexto.appendChild(sufixo);
+
+              window.__evangelhoDoDia = { titulo, texto };
+            } else {
+              bannerTexto.textContent = '📖 Evangelho do Dia: confira as leituras de hoje';
+              window.__evangelhoDoDia = null;
+            }
+          } catch (error) {
+            console.error('Erro ao buscar o Evangelho do Dia:', error);
+            bannerTexto.textContent = '📖 Evangelho do Dia: confira as leituras de hoje';
+            window.__evangelhoDoDia = null;
+          }
+        }
+
+        carregarEvangelhoDoDia();
+
+        // ----------------------------------------------------
+        // 2. DESTAQUE DO DIA DINÂMICO NO BOTÃO DO HERO
+        // ----------------------------------------------------
+        function configurarDestaqueDoDia() {
+          const btnDestaque = document.getElementById('btn-santo-destaque');
+          if (!btnDestaque) return;
+
+          // Obtém dados unificados das variáveis globais expostas pelo data.js
+          const catalogo = typeof santosData !== 'undefined' ? santosData : {};
+          const todosOsFiguras = Object.entries(catalogo);
+
+          if (!todosOsFiguras || todosOsFiguras.length === 0) return;
+
+          // Calcula o dia consecutivo do ano
+          const agora = new Date();
+          const inicioAno = new Date(agora.getFullYear(), 0, 0);
+          const diff = agora - inicioAno;
+          const umDiaEmMs = 1000 * 60 * 60 * 24;
+          const diaDoAno = Math.floor(diff / umDiaEmMs);
+
+          // Garante índice válido na lista
+          const indiceDoDia = diaDoAno % todosOsFiguras.length;
+          const [slug, figura] = todosOsFiguras[indiceDoDia] || [];
+
+          if (figura) {
+            const tipo = figura.categoria || figura.tipo || 'DESTAQUE';
+            const nome = figura.nome || figura.titulo || '';
+            btnDestaque.textContent = `DESCUBRA O ${tipo.toUpperCase()}: ${nome.toUpperCase()}`;
+            btnDestaque.href = slug ? `#saint/${encodeURIComponent(slug)}` : `#home`;
+          }
+        }
+
+        // Executa imediatamente e garante a tentativa caso o data.js demore
+        configurarDestaqueDoDia();
+        setTimeout(configurarDestaqueDoDia, 500);
+
+        // Se o conteúdo do app for atualizado pela SPA, re-executa a busca pelo botão
+        const mainContent = document.getElementById('app-content');
+        if (mainContent) {
+          const observer = new MutationObserver(() => configurarDestaqueDoDia());
+          observer.observe(mainContent, { childList: true, subtree: true });
+        }
+
+        // ----------------------------------------------------
+        // 5. BUSCA EM TEMPO REAL (DEBOUNCE)
+        // ----------------------------------------------------
+        const searchInput = document.getElementById('search-input');
+        const searchInputMobile = document.getElementById('search-input-mobile');
+
+        function handleSearch(e) {
+          const query = e.target.value.trim();
+          if (query.length > 0) {
+            window.location.hash = `#search/${encodeURIComponent(query)}`;
+          }
+        }
+
+        let debounceTimer;
+        [searchInput, searchInputMobile].forEach(input => {
+          if (!input) return;
+          input.addEventListener('input', (e) => {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(() => handleSearch(e), 300);
+          });
+        });
+
+        // ----------------------------------------------------
+        // 6. CONTROLADOR DO MODAL DO EVANGELHO
+        // ----------------------------------------------------
+        const evangelhoBanner = document.getElementById('evangelho-do-dia-banner');
+        const evangelhoModal = document.getElementById('evangelho-modal');
+        const evangelhoModalTitulo = document.getElementById('evangelho-modal-titulo');
+        const evangelhoModalTexto = document.getElementById('evangelho-modal-texto');
+        const evangelhoModalFechar = document.getElementById('evangelho-modal-fechar');
+        let evangelhoModalAcionador = null;
+
+        function fecharModalEvangelho() {
+          evangelhoModal.classList.add('hidden');
+          evangelhoModalAcionador?.focus();
+        }
+
+        if (evangelhoBanner && evangelhoModal) {
+          evangelhoBanner.addEventListener('click', (e) => {
+            if (window.__evangelhoDoDia) {
+              e.preventDefault();
+              evangelhoModalAcionador = evangelhoBanner;
+              evangelhoModalTitulo.textContent = window.__evangelhoDoDia.titulo;
+              evangelhoModalTexto.textContent = window.__evangelhoDoDia.texto;
+              evangelhoModal.classList.remove('hidden');
+              evangelhoModalFechar?.focus();
+            }
+          });
+
+          evangelhoModalFechar?.addEventListener('click', fecharModalEvangelho);
+          
+          evangelhoModal.addEventListener('click', (e) => {
+            if (e.target === evangelhoModal) fecharModalEvangelho();
+          });
+
+          document.addEventListener('keydown', (e) => {
+            if (evangelhoModal.classList.contains('hidden')) return;
+            if (e.key === 'Escape') {
+              fecharModalEvangelho();
+              return;
+            }
+            if (e.key === 'Tab') {
+              const focusable = Array.from(evangelhoModal.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+                .filter((element) => !element.disabled && element.offsetParent !== null);
+              if (!focusable.length) return;
+              const first = focusable[0];
+              const last = focusable[focusable.length - 1];
+              if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+              } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+              }
+            }
+          });
+        }
+      });
+    </script>
+</body>
+</html>

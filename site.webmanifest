@@ -1,0 +1,26 @@
+{
+  "id": "./",
+  "name": "Santidade Brasil",
+  "short_name": "Santidade Brasil",
+  "description": "Portal dedicado à fé, história e devoção católica no Brasil.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f8fc",
+  "theme_color": "#002776",
+  "icons": [
+    {
+      "src": "./Imagens/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./Imagens/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

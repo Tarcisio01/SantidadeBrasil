@@ -1,0 +1,21 @@
+# Local editor configuration
+.vscode/
+
+# Source spreadsheets and research documents; runtime data is in data.js
+*.csv
+*.docx
+IA/
+
+# Unused local video materials
+Video/
+
+# Local pnpm package store
+.pnpm-store/
+node_modules/
+
+# Arquivos organizados fora do site em sem uso
+sem uso/
+
+# Arquivos locais de ambiente não devem ser enviados ao deploy
+.env
+.env.*

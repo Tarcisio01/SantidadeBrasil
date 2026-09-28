@@ -1,0 +1,44 @@
+# Node.js / pnpm
+node_modules/
+.pnpm-store/
+.vercel/
+
+# Saídas e caches locais
+/dist/
+/build/
+/coverage/
+/.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+*.bak
+*.backup*
+*.swp
+*.swo
+secrets.*
+credentials.*
+*~
+
+# Variáveis e credenciais locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Sistema operacional e IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Arquivos de origem e mídia arquivados, fora do runtime do site
+/sem uso/
+
+

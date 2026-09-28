@@ -1,0 +1,212 @@
+/* =========================================================================
+   SISTEMA DE DESIGN RESPONSIVO E VARIÁVEIS BASE
+   ========================================================================= */
+
+:root {
+  --container-padding-mobile: 1rem;
+  --container-padding-tablet: 1.5rem;
+  --container-max-width: 1280px;
+  --responsive-transition-fast: 0.2s ease;
+}
+
+/* Prevenção de overflow horizontal global */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* =========================================================================
+   ESTILOS BASE (MOBILE-FIRST DE 0px A 639px)
+   ========================================================================= */
+
+/* Container Otimizado com suporte perfeito a Safe Area (Notch) */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* max() seleciona o maior valor entre o padding dinâmico ou a safe area do iPhone */
+  padding-left: max(clamp(0.75rem, 4vw, var(--container-padding-mobile)), env(safe-area-inset-left));
+  padding-right: max(clamp(0.75rem, 4vw, var(--container-padding-mobile)), env(safe-area-inset-right));
+}
+
+/* Hero Section com fallback para browsers antigos */
+.hero-background-container {
+  min-height: 50vh;
+  min-height: 50dvh; /* dvh evita saltos em navegadores mobile */
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Grid de Cards dos Santos */
+.saints-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+/* Página de Detalhes do Santo */
+.saint-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.saint-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.saint-bio {
+  width: 100%;
+  line-height: 1.7;
+}
+
+/* Botões com otimização de toque (Acessibilidade Google Lighthouse) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem; /* ~44px altura mínima de toque */
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  touch-action: manipulation; /* Elimina atraso de 300ms no touch */
+  user-select: none;
+  cursor: pointer;
+  border-radius: 9999px; /* Arredondado conforme o layout */
+  transition: background-color var(--responsive-transition-fast), transform var(--responsive-transition-fast), box-shadow var(--responsive-transition-fast);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* =========================================================================
+   MEDIA QUERIES PROGRESSIVAS (DESKTOP & TABLETS)
+   ========================================================================= */
+
+/* Smartphones Grandes (640px +) */
+@media (min-width: 640px) {
+  .hero-background-container {
+    min-height: 60vh;
+    min-height: 60dvh;
+  }
+
+  .saints-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Tablets (768px +) */
+@media (min-width: 768px) {
+  .container {
+    padding-left: max(var(--container-padding-tablet), env(safe-area-inset-left));
+    padding-right: max(var(--container-padding-tablet), env(safe-area-inset-right));
+  }
+
+  .hero-background-container {
+    min-height: 65vh;
+    min-height: 65dvh;
+  }
+
+  .saints-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .saint-detail {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .saint-image {
+    width: 40%;
+    max-width: 400px;
+  }
+
+  .saint-bio {
+    width: 60%;
+  }
+
+  .btn-primary {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Desktops Médios (1024px +) */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  .saints-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktops Grandes (1280px +) */
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--container-max-width);
+  }
+
+  .saints-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =========================================================================
+   UTILITÁRIOS RESPONSIVOS MODERNOS (CLAMP)
+   ========================================================================= */
+
+.responsive-text {
+  font-size: clamp(0.9375rem, 1.5vw + 0.5rem, 1.25rem);
+  line-height: 1.6;
+}
+
+.responsive-heading {
+  font-size: clamp(1.75rem, 4vw + 1rem, 3.25rem);
+  line-height: 1.2;
+}
+
+.responsive-padding {
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.responsive-margin {
+  margin: clamp(1rem, 4vw, 3rem);
+}
+
+/* =========================================================================
+   ACESSIBILIDADE
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

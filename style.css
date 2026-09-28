@@ -1,0 +1,354 @@
+/* ==========================================================================
+   SANTIDADE BR - IDENTIDADE VISUAL SACRA MODERNA
+   ========================================================================== */
+
+:root {
+  /* Paleta Principal */
+  --primary-color: #b68a3c;        /* Dourado */
+  --primary-hover: #9e752f;        /* Dourado Profundo */
+  --primary-gradient: linear-gradient(135deg, #b68a3c, #d4af37);
+  --primary-gradient-hover: linear-gradient(135deg, #9e752f, #c89b2f);
+  
+  --secondary-color: #0f3d3e;      /* Verde Escuro Nobre */
+  --bg-light: #f6f1e7;             /* Bege Acolhedor */
+  --bg-dark: #1e2f2f;              /* Verde Profundo */
+  
+  --text-dark: #2b2b2b;
+  --text-light: #ffffff;
+  --border-gold-alpha: rgba(182, 138, 60, 0.2);
+
+  /* Transições Otimizadas */
+  --transition-fast: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  --transition-slow: opacity 1.2s ease-in-out;
+
+  /* Elevação e Sombras */
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================================================
+   RESET E BASE GLOBAL
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%; /* Safari, iOS Safari, Firefox para Android */
+  -moz-text-size-adjust: 100%;    /* Suporte legado Firefox */
+  text-size-adjust: 100%;         /* Padrão W3C */
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Prevenção de estouro de mídia */
+img, 
+picture, 
+video, 
+canvas, 
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   HERO SLIDER E HERO CONTAINER
+   ========================================================================== */
+
+.hero-background-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  min-height: 80dvh; /* Suporte a telas dinâmicas mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-dark);
+}
+
+.hero-background-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 61, 62, 0.6),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+#hero-slider {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.slider-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background-color: var(--bg-dark);
+  opacity: 0;
+  transition: var(--transition-slow);
+  will-change: opacity;
+}
+
+.slider-image.active {
+  opacity: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   TIPOGRAFIA FLUIDA (CLAMP)
+   ========================================================================== */
+
+.heading-primary {
+  font-size: clamp(2.25rem, 6vw + 1rem, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  color: var(--text-light);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.heading-secondary {
+  font-size: clamp(1.75rem, 4vw + 0.5rem, 2.5rem);
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.shadow-text {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   BOTÕES E ELEMENTOS INTERATIVOS
+   ========================================================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.8rem;
+  background: var(--primary-gradient);
+  color: var(--text-light);
+  font-weight: 600;
+  border-radius: 50px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+  touch-action: manipulation; /* Elimina o delay de 300ms de toque em móbiles */
+}
+
+.btn-primary:hover {
+  background: var(--primary-gradient-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+.btn-primary:focus-visible,
+.link-podcast:focus-visible {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 4px;
+}
+
+/* ==========================================================================
+   CARDS E GRIDS RESPONSIVOS
+   ========================================================================== */
+
+/* Grid Adaptável Sem Quebras Rígidas */
+.saints-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.card-hover {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border-gold-alpha);
+  transition: var(--transition-fast);
+  will-change: transform, box-shadow;
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+/* Flexbox Responsivo */
+.flex-responsive {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .flex-responsive {
+    flex-direction: row;
+  }
+}
+
+/* ==========================================================================
+   PODCAST & LINK COMPONENTS
+   ========================================================================== */
+
+.link-podcast {
+  display: inline-block;
+  text-align: center;
+  margin: 0.625rem auto;
+  padding: 0.625rem 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  width: fit-content;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(182, 138, 60, 0.3);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  touch-action: manipulation;
+}
+
+.link-podcast:hover {
+  text-decoration: underline;
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   ANIMAÇÕES E ACESSIBILIDADE
+   ========================================================================== */
+
+.fade-in {
+  animation: fadeIn 0.7s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Suporte para Usuários com Preferência de Movimento Reduzido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.footer-link {
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #fbbf24;
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.footer-link-contact {
+  color: #34d399;
+}
+
+.brand-blue-bar,
+.brand-blue-footer {
+  background-color: #002776;
+}
+
+.brand-blue-bar:hover {
+  background-color: #001f5b;
+}
+
+.flag-green-bar {
+  background-color: #007A2F;
+}
+
+.flag-green-bar:hover {
+  background-color: #006927;
+}
+
+.brand-santidade {
+  color: #002776;
+}
+
+.brand-brasil {
+  color: #B68A3C;
+}
+
+.brand-tagline {
+  display: block;
+  width: 100%;
+  margin-top: 0.2rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brand-tagline-green { color: #009739; }
+.brand-tagline-yellow { color: #B68A3C; }
+.brand-tagline-blue { color: #002776; }
+.brand-tagline-separator { color: #64748b; }
