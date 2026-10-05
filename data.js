@@ -1028,9 +1028,27 @@ Durante o ataque à nau Santiago em 1570, foi barbaramente apunhalado pelos cors
     nome: 'André de Soveral',
     titulo: 'Santo',
     genero: 'Masculino',
-    data: '',
+    data: 'Festa litúrgica: 3 de outubro',
     imagem: placeholderImage,
-    bio: 'Biografia em desenvolvimento.',
+    bio: `
+      <h3 class="text-xl font-bold text-gray-800 mt-6 mb-2">Origens e missão</h3>
+      <p>Nascido em 16 de julho de 1572, em São Vicente, André de Soveral ingressou na Companhia de Jesus e participou da missão de evangelização no Nordeste. Em 1597, missionários jesuítas e sacerdotes diocesanos iniciaram esse trabalho no Rio Grande do Norte. Mais tarde, André deixou a Companhia de Jesus e tornou-se sacerdote diocesano.</p>
+
+      <h3 class="text-xl font-bold text-gray-800 mt-6 mb-2">Pároco em Cunhaú</h3>
+      <p>André serviu como pároco em Cunhaú, comunidade formada ao redor de um engenho de açúcar, na atual Canguaretama, no Rio Grande do Norte. Na Capela de Nossa Senhora das Candeias, celebrou a missa e acompanhou a comunidade local.</p>
+
+      <h3 class="text-xl font-bold text-gray-800 mt-6 mb-2">O martírio</h3>
+      <p>Em 16 de julho de 1645, durante a missa dominical em Cunhaú, soldados holandeses e indígenas aliados invadiram a capela e atacaram os fiéis. André, que celebrava a missa, rezou com os companheiros pelas pessoas que agonizavam. Ele e os demais mártires identificados naquele episódio morreram durante o ataque.</p>
+
+      <h3 class="text-xl font-bold text-gray-800 mt-6 mb-2">Beatificação e canonização</h3>
+      <p>André de Soveral foi beatificado por São João Paulo II em 5 de março de 2000, junto com outros mártires de Cunhaú e Uruaçu. Em 15 de outubro de 2017, o Papa Francisco canonizou André, Ambrósio Francisco Ferro, Mateus Moreira e seus companheiros. A festa litúrgica dos Protomártires do Brasil é celebrada em 3 de outubro.</p>
+
+      <h3 class="text-xl font-bold text-gray-800 mt-6 mb-2">Fontes</h3>
+      <ul>
+        <li><a href="https://www.vaticannews.va/pt/igreja/news/2021-10/santo-andre-de-soveral-e-companheiros-protomrtires.html" target="_blank">Vatican News — Santo André de Soveral e Companheiros</a></li>
+        <li><a href="https://www.vatican.va/archive/aas/documents/2019/acta-marzo2019.pdf" target="_blank">Santa Sé — Decreto de canonização</a></li>
+        <li><a href="https://www.vatican.va/news_services/liturgy/libretti/2017/20171015-libretto-canonizzazione.pdf" target="_blank">Santa Sé — Celebração da canonização (2017)</a></li>
+      </ul>`,
     milagres: [],
     reliquias: '',
     oracao: '',
